@@ -1,0 +1,17 @@
+- Web Jobs Can Be Written:
+  - As Compiled Applications in batch files / PowerShell Scrips / Bash shell scripts
+  - In Frameworks such as Python / Node.js
+- Web Jobs Can Be Deployed:
+  - Via source control (i.e. GIT)
+  - FTP
+  - Visual Studio
+  - CI/CD tools (ex. Azure DevOps Services)
+- Web Job Types
+  - Continuous (ex. use case - polling a message queue)
+  - Triggered (ex. use case - creating a summary of the message queue at the end of the day)
+    - Can start on a schedule or via manual trigger/call
+- Web Jobs and Azure Functions are very similar, Azure Functions are effectively successors of Web Jobs however Web Jobs still have some benefits:
+  - Azure Functions: More flexible and scalable, maintained separately
+  - Web Jobs: Can be deployed and maintained alongside website code, easier to maintain
+- Web Jobs require the web app to be set to always on to operate properly.  This can be achieved with the following command in the Azure CLI (replace WEB_APP_ID with the proper value):
+  - az webapp config set --id $WEB_APP_ID --always-on true
